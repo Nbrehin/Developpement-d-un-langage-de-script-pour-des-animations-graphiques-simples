@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UIController">
+   <left>
+      <VBox fillWidth="false" prefHeight="600.0" prefWidth="177.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="481.0" prefWidth="173.0">
+               <children>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Connexion">
+                           <FlowPane.margin>
+                              <Insets top="10.0" right="10.0" bottom="10.0" left="10.0" />
+                           </FlowPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </FlowPane>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Adresse du serveur :">
+                           <FlowPane.margin>
+                              <Insets top="5.0" right="10.0" bottom="5.0" left="10.0" />
+                           </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="addresse_field">
+                           <FlowPane.margin>
+                              <Insets top="0.0" right="10.0" bottom="0.0" left="10.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                     </children>
+                  </FlowPane>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Port :">
+                           <FlowPane.margin>
+                              <Insets top="5.0" right="10.0" bottom="5.0" left="10.0" />
+                           </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="port_field">
+                           <FlowPane.margin>
+                              <Insets top="0.0" right="10.0" bottom="0.0" left="10.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                     </children>
+                  </FlowPane>
+                  <FlowPane columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="connexion_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#connexion_btn_clic" text="Connexion">
+                           <FlowPane.margin>
+                              <Insets top="5.0" right="10.0" bottom="10.0" left="10.0" />
+                           </FlowPane.margin>
+                        </Button>
+                     </children>
+                  </FlowPane>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="deconnexion_btn" mnemonicParsing="false" onAction="#deconnexion_btn_clic" text="Déconnexion">
+                           <FlowPane.margin>
+                              <Insets top="5.0" right="10.0" bottom="20.0" left="10.0" />
+                           </FlowPane.margin>
+                        </Button>
+                     </children>
+                  </FlowPane>
+                  <Separator prefWidth="200.0" />
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Commande à entrer :">
+                           <FlowPane.margin>
+                              <Insets top="5.0" right="10.0" bottom="5.0" left="10.0" />
+                           </FlowPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cmd_field">
+                           <FlowPane.margin>
+                              <Insets top="0.0" right="10.0" bottom="0.0" left="10.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                        <Button fx:id="envoi_cmd_btn" mnemonicParsing="false" onAction="#envoi_cmd_on_clic" text="Envoyer commande">
+                           <FlowPane.margin>
+                              <Insets top="5.0" right="10.0" bottom="20.0" left="10.0" />
+                           </FlowPane.margin>
+                        </Button>
+                        <Button fx:id="select_file_btn" mnemonicParsing="false" onAction="#select_file" text="Sellection fichier">
+                           <FlowPane.margin>
+                              <Insets top="5.0" right="10.0" bottom="20.0" left="10.0" />
+                           </FlowPane.margin>
+                        </Button>
+                     </children>
+                  </FlowPane>
+                  <Separator prefWidth="200.0" />
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="choix_bloc_btn" mnemonicParsing="false" onAction="#mode_bloc_choisi" text="Mode par Bloc">
+                        </Button>
+                        <Button fx:id="choix_pas_btn" mnemonicParsing="false" onAction="#mode_pas_choisi" text="Mode par Pas">
+                        </Button>
+                     </children>
+                  </FlowPane>
+                  <Separator prefWidth="200.0" />
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="exec_btn" mnemonicParsing="false" onAction="#demande_exec_clic" text="Exécution">
+                        </Button>
+                     </children>
+                  </FlowPane>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Commande en cours d'éxécution :"><font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <ListView fx:id="message_list" prefHeight="200.0" prefWidth="200.0"/>
+                     </children>
+                  </FlowPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imageView" fitWidth="400.0" fitHeight="600.0" preserveRatio="true" />
+         </children>
+         <children>
+          	<TextArea fx:id="environment_area" prefHeight="200.0" prefWidth="600.0" editable="false" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
